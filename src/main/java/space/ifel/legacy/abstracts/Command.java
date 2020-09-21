@@ -1,18 +1,18 @@
-package abstracts;
+package space.ifel.legacy.abstracts;
 
-import enums.ParameterPattern;
+import space.ifel.legacy.enums.ParameterPattern;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class Command implements interfaces.Command {
+public abstract class Command implements space.ifel.legacy.interfaces.Command {
 
     protected String commandBody;
     protected ArrayList<String> parameters;
 
     @Override
-    public interfaces.Command Command(String commandBody) {
+    public space.ifel.legacy.interfaces.Command Command(String commandBody) {
         this.commandBody = commandBody;
         ProcessPattern();
         return this;

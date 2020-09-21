@@ -1,4 +1,4 @@
-package enums;
+package space.ifel.legacy.enums;
 
 /**
  * Get does not require parameters

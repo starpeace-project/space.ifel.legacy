@@ -1,4 +1,4 @@
-package interfaces;
+package space.ifel.legacy.interfaces;
 
 public interface Command {
     Command Command(String commandBody);

@@ -1,6 +1,6 @@
-package enums;
+package space.ifel.legacy.enums;
 
-enum Command {
+public enum Command {
     IDOF                        ("idof"),
     RDOOPENSESSION              ("RDOOpenSession"),
     RDOMAPSEGAUSER              ("RDOMapSegaUser"),

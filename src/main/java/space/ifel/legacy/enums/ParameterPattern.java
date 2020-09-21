@@ -1,4 +1,4 @@
-package enums;
+package space.ifel.legacy.enums;
 
 /**
  * This enum is for regex patterns to pull data from the relevant command
