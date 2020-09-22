@@ -9,24 +9,25 @@ import java.util.regex.Pattern;
 public abstract class Command implements space.ifel.legacy.interfaces.Command {
 
     protected String commandBody;
-    protected ArrayList<String> parameters;
+    protected ArrayList<String> parameters = new ArrayList<>();
 
-    @Override
-    public space.ifel.legacy.interfaces.Command Command(String commandBody) {
+    public space.ifel.legacy.interfaces.Command process(String commandBody) {
         this.commandBody = commandBody;
-        ProcessPattern();
+        processPattern();
+        System.out.println("PROCESSED\n");
         return this;
     }
 
-    public abstract void Process();
-
-    protected abstract ParameterPattern GetPattern();
+    protected abstract ParameterPattern getPattern();
 
     @Override
-    public abstract String GetResponse();
+    public abstract space.ifel.legacy.interfaces.Command buildMeaning();
 
-    protected void ProcessPattern() {
-        String regex = GetPattern().toString();
+    @Override
+    public abstract String getResponse();
+
+    protected void processPattern() {
+        String regex = getPattern().getCommand();
         Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE | Pattern.DOTALL);
         Matcher matcher = pattern.matcher(this.commandBody);
 

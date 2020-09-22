@@ -1,7 +1,5 @@
 package space.ifel.legacy.sessions;
 
-import space.ifel.core.protocols.Directory;
-
 import java.net.InetAddress;
 import java.util.ArrayList;
 
@@ -83,7 +81,7 @@ class SessionStore {
         sessionStore.remove(byId);
         releaseLock();
 
-        return Directory.SESSION_EXPIRED;
+        return 107;
     }
 }
 

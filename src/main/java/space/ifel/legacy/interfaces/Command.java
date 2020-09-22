@@ -1,9 +1,9 @@
 package space.ifel.legacy.interfaces;
 
 public interface Command {
-    Command Command(String commandBody);
+    Command process(String commandBody);
 
-    void Process();
+    Command buildMeaning();
 
-    String GetResponse();
+    String getResponse();
 }
