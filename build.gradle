@@ -11,7 +11,7 @@ plugins {
 }
 
 group 'space.ifel'
-version '1.0.2'
+version '1.0.3'
 
 repositories {
     mavenCentral()
@@ -32,7 +32,7 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/starpeace-project/space.ifel.legacy")
                     credentials {
-                        username = System.getenv("GITHUB_ACTOR")
+                        username = System.getenv("GITHUB_USER")
                         password = System.getenv("GITHUB_TOKEN")
                     }
         }
