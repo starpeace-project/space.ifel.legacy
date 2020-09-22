@@ -64,8 +64,6 @@ gradle-app.setting
 # End of https://www.gitignore.io/api/java,linux,gradle
 
 HELP.md
-.gradle
-build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**

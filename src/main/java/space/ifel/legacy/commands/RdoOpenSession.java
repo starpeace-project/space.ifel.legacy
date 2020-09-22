@@ -7,11 +7,13 @@ public class RdoOpenSession extends Command {
 
     protected int callNumber;
     protected int objectId;
+    protected int sessionId;
 
     @Override
     public space.ifel.legacy.interfaces.Command buildMeaning() {
         this.callNumber = Integer.parseInt(this.parameters.get(0));
         this.objectId = Integer.parseInt(this.parameters.get(1));
+        this.sessionId = Integer.parseInt("987987987");
 
         return this;
     }
@@ -25,6 +27,6 @@ public class RdoOpenSession extends Command {
     public String getResponse() {
         // Get session id from somewhere...
 
-        return "A " + this.callNumber + " RDOOpensession=\"@todo Session id here\";";
+        return "A" + this.callNumber + " RDOOpensession=\"" + this.sessionId + "\";";
     }
 }

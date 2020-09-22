@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public abstract class Command implements space.ifel.legacy.interfaces.Command {
 
     protected String commandBody;
-    protected ArrayList<String> parameters = new ArrayList<>();
+    protected ArrayList<String> parameters;
 
     public space.ifel.legacy.interfaces.Command process(String commandBody) {
         this.commandBody = commandBody;
@@ -27,6 +27,7 @@ public abstract class Command implements space.ifel.legacy.interfaces.Command {
     public abstract String getResponse();
 
     protected void processPattern() {
+        this.parameters = new ArrayList<>();
         String regex = getPattern().getCommand();
         Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE | Pattern.DOTALL);
         Matcher matcher = pattern.matcher(this.commandBody);

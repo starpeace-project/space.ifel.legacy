@@ -24,9 +24,8 @@ public class CommandHandler {
     protected space.ifel.legacy.interfaces.Command getClass(String className) {
         try {
             ClassLoader classLoader = CommandHandler.class.getClassLoader();
-            Class<? extends space.ifel.legacy.interfaces.Command> cmnd =
-                    (Class<? extends space.ifel.legacy.interfaces.Command>) classLoader.loadClass(className);
-            return cmnd.getDeclaredConstructor().newInstance();
+            Class<?> cmnd = classLoader.loadClass(className);
+            return (space.ifel.legacy.interfaces.Command) cmnd.getDeclaredConstructor().newInstance();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

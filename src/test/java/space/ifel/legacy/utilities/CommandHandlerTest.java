@@ -3,7 +3,6 @@ package space.ifel.legacy.utilities;
 import junit.framework.TestCase;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import space.ifel.legacy.commands.RdoOpenSession;
-import space.ifel.legacy.enums.ParameterPattern;
 
 import static org.junit.Assert.assertThat;
 
