@@ -28,12 +28,12 @@ tasks.withType(JavaCompile) {
 publishing {
     repositories {
         maven {
-            name = "GithubPackages"
+            name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/starpeace-project/space.ifel.legacy")
-            credentials {
-                username = findProperty("gpr.user")
-                password = findProperty("gpr.key")
-            }
+                    credentials {
+                        username = project.findProperty("gpr.user") ?: System.getenv("DanielEderFilho")
+                        password = project.findProperty("gpr.key") ?: System.getenv("e68f695fffc013cc512ce740bbe05f1270fe8f28")
+                    }
         }
     }
     publications {

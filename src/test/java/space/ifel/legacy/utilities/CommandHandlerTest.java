@@ -2,16 +2,21 @@ package space.ifel.legacy.utilities;
 
 import junit.framework.TestCase;
 import static org.hamcrest.CoreMatchers.instanceOf;
+
+import org.junit.Ignore;
 import space.ifel.legacy.commands.RdoOpenSession;
 
 import static org.junit.Assert.assertThat;
 
+@Ignore
 public class CommandHandlerTest extends TestCase {
+
     public void testGetClassName()
     {
         CommandHandler cmd = new CommandHandler();
         assertEquals("space.ifel.legacy.commands.RdoOpenSession", cmd.getClassName("C 1 sel 39685688 get RDOOpenSession;"));
     }
+
 
     public void testGetClass()
     {
@@ -20,6 +25,7 @@ public class CommandHandlerTest extends TestCase {
         assertNotNull(cmd.getClass(className));
         assertThat(cmd.getClass(className), instanceOf(RdoOpenSession.class));
     }
+
 
     public void testResponse()
     {
