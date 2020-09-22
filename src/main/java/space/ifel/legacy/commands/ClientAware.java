@@ -3,27 +3,32 @@ package space.ifel.legacy.commands;
 import space.ifel.legacy.abstracts.Command;
 import space.ifel.legacy.enums.ParameterPattern;
 
-public class RdoEndSession extends Command {
+public class ClientAware extends Command {
 
-    protected int callNumber;
     protected int sessionId;
 
     @Override
     protected ParameterPattern getPattern() {
-        return ParameterPattern.RDOENDSESSION;
+        return ParameterPattern.CLIENTAWARE;
     }
 
     @Override
     public space.ifel.legacy.interfaces.Command buildMeaning() {
-        this.callNumber = Integer.parseInt(this.parameters.get(0));
-        this.sessionId = Integer.parseInt(this.parameters.get(1));
-        // Kill the session
+        this.sessionId = Integer.parseInt(this.parameters.get(0));
 
         return this;
     }
 
     @Override
     public String getResponse() {
-        return "A" + this.callNumber + " ;";
+        return null;
     }
+
+    /**
+     * C sel 31600636 call ClientAware "*" ;
+     */
+
+    /**
+     *
+     */
 }

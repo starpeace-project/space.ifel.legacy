@@ -3,27 +3,30 @@ package space.ifel.legacy.commands;
 import space.ifel.legacy.abstracts.Command;
 import space.ifel.legacy.enums.ParameterPattern;
 
-public class RdoEndSession extends Command {
+public class NewMail extends Command {
 
-    protected int callNumber;
-    protected int sessionId;
+    protected int objectId;
+    protected int param1; // Find meaning
 
     @Override
     protected ParameterPattern getPattern() {
-        return ParameterPattern.RDOENDSESSION;
+        return ParameterPattern.NEWMAIL;
     }
 
     @Override
     public space.ifel.legacy.interfaces.Command buildMeaning() {
-        this.callNumber = Integer.parseInt(this.parameters.get(0));
-        this.sessionId = Integer.parseInt(this.parameters.get(1));
-        // Kill the session
+        this.objectId = Integer.parseInt(this.parameters.get(0));
+        this.param1 = Integer.parseInt(this.parameters.get(1));
 
         return this;
     }
 
     @Override
     public String getResponse() {
-        return "A" + this.callNumber + " ;";
+        return null;
     }
+
+    /**
+     * C sel 37839680 call NewMail "*" "#1";
+     */
 }

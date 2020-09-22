@@ -1,5 +1,7 @@
 package space.ifel.legacy.enums;
 
+import space.ifel.legacy.commands.EnableEvents;
+
 /**
  * This enum is for regex patterns to pull data from the relevant command
  */
@@ -12,6 +14,7 @@ public enum ParameterPattern {
     RDOENDSESSION               ("C\\s(\\d+?)\\ssel\\s(\\d+?)\\scall"),
     RDOQUERYKEY                 ("C\\s(\\d+?)\\ssel\\s(.+?)\\scall\\sRDOQueryKey\\s\"\\^\"\\s\"(.+?)\",\"(.+?)\""),
     WORLDNAME                   ("C\\s(\\d+?)\\ssel\\s(\\d+?)\\sget"),
+    WORLDURL                    ("C\\s(\\d+?)\\ssel\\s(\\d+?)\\sget"),
     DAADDR                      ("C\\s(\\d+?)\\ssel\\s(\\d+?)\\sget"),
     DALOCKPORT                  ("C\\s(\\d+?)\\ssel\\s(\\d+?)\\sget"),
     MAILADDR                    ("C\\s(\\d+?)\\ssel\\s(\\d+?)\\sget"),
@@ -40,7 +43,8 @@ public enum ParameterPattern {
     CLIENTAWARE                 ("C\\ssel\\s(\\d+?)\\scall"),
     CHATMSG                     ("C\\ssel\\s(\\d+?)\\scall\\sChatMsg\\s\"\\*\"\\s\"(.+?)\",\"(.+?)\""),
     MSGCOMPOSITIONCHANGED       ("C\\ssel\\s(\\d+?)\\scall\\sMsgCompositionChanged\\s\"\\*\"\\s\"(.+?)\""),
-    NOTIFYMSGCOMPOSITIONSTATE   ("C\\ssel\\s(\\d+?)\\scall\\sNotifyMsgCompositionState\\s\"\\*\"\\s\"(.+?)\",\"(.+?)\"");
+    NOTIFYMSGCOMPOSITIONSTATE   ("C\\ssel\\s(\\d+?)\\scall\\sNotifyMsgCompositionState\\s\"\\*\"\\s\"(.+?)\",\"(.+?)\""),
+    ENABLEEVENTS                ("C\\s(\\d+?)\\ssel\\s(\\d+?)\\sset\\sEnableEvents=\"(.+?)\"");
 
     private final String parameterPattern;
 

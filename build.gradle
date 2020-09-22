@@ -32,7 +32,7 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/starpeace-project/space.ifel.legacy")
                     credentials {
-                        username = System.getenv("GITHUB_USER")
+                        username = System.getenv("GITHUB_ACTOR")
                         password = System.getenv("GITHUB_TOKEN")
                     }
         }
