@@ -6,6 +6,7 @@ buildscript {
 
 plugins {
     id 'java'
+    id 'maven'
     id 'maven-publish'
 }
 
@@ -23,22 +24,4 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.compilerArgs << '-Xlint:unchecked'
     options.deprecation = true
-}
-
-publishing {
-    repositories {
-        maven {
-            name = "GithubPackages"
-            url = uri("https://maven.pkg.github.com/starpeace-project/space.ifel.legacy")
-            credentials {
-                username = findProperty("gpr.user")
-                password = findProperty("gpr.key")
-            }
-        }
-    }
-    publications {
-        gpr(MavenPublication) {
-            from(components.java)
-        }
-    }
 }
