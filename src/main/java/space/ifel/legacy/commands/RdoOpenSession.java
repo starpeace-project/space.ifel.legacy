@@ -27,6 +27,6 @@ public class RdoOpenSession extends Command {
     public String getResponse() {
         // Get session id from somewhere...
 
-        return "A" + this.callNumber + " RDOOpensession=\"" + this.sessionId + "\";";
+        return "A" + this.callNumber + " RDOOpensession=#\"" + this.sessionId + "\";";
     }
 }
